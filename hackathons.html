@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahil Bhatia | Hackathon Logs</title>
+    <meta name="description" content="Hackathon Participations of Sahil Bhatia - Cybersecurity Enthusiast & Ethical Hacker.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="crt-overlay">
+    <!-- Matrix Background Layer -->
+    <canvas id="matrixCanvas"></canvas>
+    
+    <!-- Subtle Grid Overlay -->
+    <div class="grid-overlay"></div>
+
+    <!-- Main Content Scrollable Overlay -->
+    <div class="portfolio-overlay" style="z-index: 20;">
+        <!-- Navigation -->
+        <nav id="navbar" style="background: rgba(0, 8, 0, 0.95);">
+            <div class="nav-content">
+                <div class="logo">
+                    <span class="bracket">{</span> SAHIL BHATIA <span class="bracket">}</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html#achievements"><i class="fas fa-arrow-left"></i> Return to Main OS</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <main style="padding-top: 150px;">
+            <section class="section achievements-section" style="min-height: calc(100vh - 150px); padding-top: 50px;">
+                <div class="section-container">
+                    <h2 class="section-title">Hackathon Execution Logs</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 40px; text-align: center;">Verified logs of 20+ competitive hackathon environments intercepted and evaluated.</p>
+
+                    <div class="cert-grid fade-in-up visible hacker-panel">
+                        <!-- Hackathon Item 1 -->
+                        <div class="cert-item" style="padding: 30px 15px;">
+                            <i class="fas fa-laptop-code" style="font-size: 3rem; color: var(--primary-neon); margin-bottom: 20px; display: block;"></i>
+                            <h4>Chandigarh University</h4>
+                            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 5px;">Participated 4 Times</p>
+                        </div>
+                        
+                        <!-- Hackathon Item 2 -->
+                        <div class="cert-item" style="padding: 30px 15px;">
+                            <i class="fas fa-flag" style="font-size: 3rem; color: var(--primary-neon); margin-bottom: 20px; display: block;"></i>
+                            <h4>NIT Hamirpur</h4>
+                            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 5px;">National Level Hackathon</p>
+                        </div>
+                        
+                        <!-- Hackathon Item 3 -->
+                        <div class="cert-item" style="padding: 30px 15px;">
+                            <i class="fas fa-university" style="font-size: 3rem; color: var(--primary-neon); margin-bottom: 20px; display: block;"></i>
+                            <h4>Parul University, Gujarat</h4>
+                            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 5px;">On-Site Competition</p>
+                        </div>
+                        
+                        <!-- Hackathon Item 4 -->
+                        <div class="cert-item" style="padding: 30px 15px;">
+                            <i class="fas fa-flask" style="font-size: 3rem; color: var(--primary-neon); margin-bottom: 20px; display: block;"></i>
+                            <h4>Science City, Jalandhar</h4>
+                            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 5px;">Innovation Challenge</p>
+                        </div>
+
+                        <!-- Hackathon Item 5 -->
+                        <div class="cert-item" style="padding: 30px 15px;">
+                            <i class="fas fa-building" style="font-size: 3rem; color: var(--primary-neon); margin-bottom: 20px; display: block;"></i>
+                            <h4>GNA, Jalandhar</h4>
+                            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 5px;">University Level Hackathon</p>
+                        </div>
+
+                        <!-- Hackathon Item 6 -->
+                        <div class="cert-item" style="padding: 30px 15px;">
+                            <i class="fas fa-network-wired" style="font-size: 3rem; color: var(--primary-neon); margin-bottom: 20px; display: block;"></i>
+                            <h4>Plaksha University, Chandigarh</h4>
+                            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 5px;">Tech Development Event</p>
+                        </div>
+
+                        <!-- Hackathon Item 7 -->
+                        <div class="cert-item" style="padding: 30px 15px; grid-column: 1 / -1;">
+                            <i class="fas fa-globe" style="font-size: 3rem; color: var(--primary-neon); margin-bottom: 20px; display: block;"></i>
+                            <h4>Various Online Hackathons</h4>
+                            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 5px;">Participated globally across multiple virtual competitive programming and cybersecurity events.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Sahil Bhatia. Transmission Encrypted.</p>
+        </footer>
+    </div>
+
+    <!-- Matrix logic only for the background -->
+    <script>
+        const canvas = document.getElementById('matrixCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$+-*/=%""\'#&_(),.;:?!\\|{}<>[]^~'.split('');
+        const fontSize = 14;
+        const columns = canvas.width / fontSize;
+        const drops = [];
+        for (let x = 0; x < columns; x++) { drops[x] = 1; }
+
+        function drawMatrix() {
+            ctx.fillStyle = 'rgba(0, 8, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#00ff41'; // Matrix green
+            ctx.font = fontSize + 'px monospace';
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = chars[Math.floor(Math.random() * chars.length)];
+                if (Math.random() > 0.95) ctx.fillStyle = '#fff';
+                else ctx.fillStyle = '#0f0';
+
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+        setInterval(drawMatrix, 50);
+    </script>
+</body>
+</html>

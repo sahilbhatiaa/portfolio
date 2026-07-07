@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahil Bhatia | NSE Certificates</title>
+    <meta name="description" content="Fortinet Network Security Expert Certifications of Sahil Bhatia - Cybersecurity Enthusiast & Ethical Hacker.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="crt-overlay">
+    <!-- Matrix Background Layer -->
+    <canvas id="matrixCanvas"></canvas>
+    
+    <!-- Subtle Grid Overlay -->
+    <div class="grid-overlay"></div>
+
+    <!-- Main Content Scrollable Overlay -->
+    <div class="portfolio-overlay" style="z-index: 20;">
+        <!-- Navigation -->
+        <nav id="navbar" style="background: rgba(0, 8, 0, 0.95);">
+            <div class="nav-content">
+                <div class="logo">
+                    <span class="bracket">{</span> SAHIL BHATIA <span class="bracket">}</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html#achievements"><i class="fas fa-arrow-left"></i> Return to Main OS</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <main style="padding-top: 150px;">
+            <section class="section achievements-section" style="min-height: calc(100vh - 150px); padding-top: 50px;">
+                <div class="section-container">
+                    <h2 class="section-title">NSE Certificates (Fortinet)</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 40px; text-align: center;">Fortinet Network Security Expert Certifications.</p>
+
+                    <div class="cert-grid fade-in-up visible hacker-panel">
+                        <div class="cert-item" onclick="openCertModal(&quot;certificates.jpg/fortinet_threat_landscape.jpg&quot;)">
+                            <img src="certificates.jpg/fortinet_threat_landscape.jpg" alt="Introduction to the Threat Landscape 3.0" class="cert-img">
+                        </div>
+                        <div class="cert-item" onclick="openCertModal(&quot;certificates.jpg/fortinet_cert_2.jpg&quot;)">
+                            <img src="certificates.jpg/fortinet_cert_2.jpg" alt="Fortinet NSE Certificate 2" class="cert-img">
+                        </div>
+                        <div class="cert-item" onclick="openCertModal(&quot;certificates.jpg/fortinet_cert_3.jpg&quot;)">
+                            <img src="certificates.jpg/fortinet_cert_3.jpg" alt="Fortinet NSE Certificate 3" class="cert-img">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Sahil Bhatia. Transmission Encrypted.</p>
+        </footer>
+    </div>
+
+    <!-- Modal for Full-size Certificate -->
+    <div id="certModal" class="cert-modal">
+        <span class="cert-modal-close" onclick="closeCertModal()">&times;</span>
+        <img class="cert-modal-content" id="certModalImg">
+    </div>
+
+    <script src="script.js"></script>
+    <!-- Matrix logic only for the background -->
+    <script>
+        const canvas = document.getElementById('matrixCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$+-*/=%""\'#&_(),.;:?!\\|{}<>[]^~'.split('');
+        const fontSize = 14;
+        const columns = canvas.width / fontSize;
+        const drops = [];
+        for (let x = 0; x < columns; x++) { drops[x] = 1; }
+
+        function drawMatrix() {
+            ctx.fillStyle = 'rgba(0, 8, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#00ff41'; // Matrix green
+            ctx.font = fontSize + 'px monospace';
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = chars[Math.floor(Math.random() * chars.length)];
+                if (Math.random() > 0.95) ctx.fillStyle = '#fff';
+                else ctx.fillStyle = '#0f0';
+
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+        setInterval(drawMatrix, 50);
+
+        // Required logic for the modal
+        function openCertModal(imageSrc) {
+            const modal = document.getElementById("certModal");
+            const modalImg = document.getElementById("certModalImg");
+            modal.style.display = "block";
+            modalImg.src = imageSrc;
+            setTimeout(() => {
+                modal.classList.add("show");
+            }, 10);
+        }
+
+        function closeCertModal() {
+            const modal = document.getElementById("certModal");
+            modal.classList.remove("show");
+            setTimeout(() => {
+                modal.style.display = "none";
+            }, 300);
+        }
+    </script>
+</body>
+</html>

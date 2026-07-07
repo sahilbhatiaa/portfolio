@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahil Bhatia | Hacker OS</title>
+    <meta name="description" content="Portfolio of Sahil Bhatia - Cybersecurity Enthusiast & Ethical Hacker.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="crt-overlay">
+    <!-- Matrix Background Layer -->
+    <canvas id="matrixCanvas"></canvas>
+    
+    <!-- Subtle Grid Overlay -->
+    <div class="grid-overlay"></div>
+
+    <!-- Terminal Intro Overlay -->
+    <div id="terminal-intro">
+        <div class="terminal-content">
+            <span class="prompt">root@sahil-os:~#</span> <span id="intro-type"></span><span class="cursor">_</span>
+        </div>
+    </div>
+
+    <!-- Desktop Environment UI (Underneath Portfolio) -->
+    <div class="hacker-desktop" id="desktop">
+        <!-- Removed Desktop Icons Sidebar to reduce clutter -->
+
+        <!-- Floating Windows (Decorative & Draggable) -->
+        <div class="os-window draggable" style="top: 10%; left: 5%;">
+            <div class="window-titlebar">
+                <span><i class="fas fa-terminal"></i> root@sahil-os: /Program Console</span>
+                <div class="window-controls"><span class="win-btn">_</span><span class="win-btn win-close">X</span></div>
+            </div>
+            <div class="window-content terminal-sim">
+                <p><span class="prompt">root@sahil-os:~#</span> nmap -sV 192.168.1.1</p>
+                <p>Starting Nmap 7.92...</p>
+                <p>Host is up (0.0020s latency).</p>
+                <p>Not shown: 998 closed tcp ports</p>
+                <p>PORT   STATE SERVICE VERSION</p>
+                <p>22/tcp open  ssh     OpenSSH 8.2p1</p>
+                <p>80/tcp open  http    Apache httpd 2.4.41</p>
+                <p>Service detection performed. Please report any incorrect results.</p>
+                <p><span class="prompt">root@sahil-os:~#</span> <span class="blink">_</span></p>
+            </div>
+        </div>
+
+        <div class="os-window draggable" style="top: 60%; right: 5%; width: 350px;">
+            <div class="window-titlebar">
+                <span><i class="fas fa-project-diagram"></i> Neural Network Tracing</span>
+                <div class="window-controls"><span class="win-btn">_</span><span class="win-btn win-close">X</span></div>
+            </div>
+            <div class="window-content" style="padding:0; overflow:hidden;">
+                <canvas id="neuralCanvas" width="350" height="200"></canvas>
+            </div>
+        </div>
+        
+        <div class="os-window draggable" style="top: 15%; right: 10%; width: 300px;">
+            <div class="window-titlebar">
+                <span><i class="fas fa-shield-alt"></i> Security Scanner (Live)</span>
+                <div class="window-controls"><span class="win-btn">_</span><span class="win-btn win-close">X</span></div>
+            </div>
+            <div class="window-content scanner-sim">
+                <p class="status-warn">[*] Scanning packets...</p>
+                <p class="status-ok">[+] No vulnerabilities detected.</p>
+                <p class="status-warn">[*] Monitoring firewall rules...</p>
+                <p class="status-ok">[+] Traffic encrypted.</p>
+                <div class="scan-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Portfolio Scrollable Overlay -->
+    <div class="portfolio-overlay">
+        <!-- Navigation -->
+        <nav id="navbar">
+            <div class="nav-content">
+                <div class="logo">
+                    <span class="bracket">{</span> SAHIL BHATIA <span class="bracket">}</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#achievements">Achievements</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+
+        <main>
+            <!-- Home Section -->
+            <section id="hero" class="section hero-section">
+                <div class="hero-content fade-in-up">
+                    <p class="greeting">System Accessed. Identity verified as:</p>
+                    <h1 class="name glow-text flicker">Sahil Bhatia</h1>
+                    <h2 class="tagline">
+                        <span id="hero-type"></span><span class="cursor">_</span>
+                    </h2>
+                    <p class="brief">Cybersecurity Enthusiast | Ethical Hacker | Cloud & DevOps Learner</p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn primary-btn"><i class="fas fa-rocket"></i> Access Database</a>
+                        <a href="#contact" class="btn secondary-btn"><i class="fas fa-paper-plane"></i> Ping Request</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="section about-section">
+                <div class="section-container">
+                    <h2 class="section-title">User Profile</h2>
+                    <div class="about-content fade-in-up hacker-panel">
+                        <div class="about-text">
+                            <p>Cybersecurity is my core area of interest, and I am currently working as a <span class="highlight">Cybersecurity Intern at Coder Roots</span>, where I gain hands-on experience in ethical hacking, vulnerability assessment, and security tools.</p>
+                            <br>
+                            <p>I am a final-year B.Tech Computer Science student at <span class="highlight">Sant Baba Bhag Singh University, Jalandhar</span>. Alongside my internship, I am actively learning Cloud Computing and DevOps technologies, focusing on AWS, Terraform, and Kubernetes.</p>
+                            <br>
+                            <p>I have strong knowledge in cybersecurity, networking, and cloud technologies, and I am passionate about solving real-world security problems, exploring new tools, and continuously improving my skills.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills" class="section skills-section">
+                <div class="section-container">
+                    <h2 class="section-title">Weaponry (Skills)</h2>
+                    
+                    <div class="skills-grid">
+                        <div class="skill-category fade-in-up hacker-panel">
+                            <div class="skill-header">
+                                <i class="fas fa-shield-alt"></i>
+                                <h3>Cybersecurity</h3>
+                            </div>
+                            <div class="skill-group">
+                                <h4>Tools</h4>
+                                <div class="skill-tags">
+                                    <span>Burp Suite</span><span>Caido</span><span>OWASP ZAP</span><span>Maltego</span>
+                                    <span>Pic2Map</span><span>OpenStego</span><span>Hydra</span><span>Nmap</span>
+                                </div>
+                            </div>
+                            <div class="skill-group">
+                                <h4>Techniques</h4>
+                                <ul class="skill-list">
+                                    <li><i class="fas fa-angle-right"></i> Brute Force</li>
+                                    <li><i class="fas fa-angle-right"></i> Network Scanning</li>
+                                    <li><i class="fas fa-angle-right"></i> Vulnerability Assessment</li>
+                                </ul>
+                            </div>
+                            <div class="skill-group">
+                                <h4>Practical</h4>
+                                <ul class="skill-list">
+                                    <li><i class="fas fa-angle-right"></i> DVWA Labs</li>
+                                    <li><i class="fas fa-angle-right"></i> TryHackMe Rooms</li>
+                                    <li><i class="fas fa-angle-right"></i> CamPhish, ZPhish</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="skill-category fade-in-up hacker-panel" style="transition-delay: 0.1s;">
+                            <div class="skill-header">
+                                <i class="fas fa-network-wired"></i>
+                                <h3>Networking</h3>
+                            </div>
+                            <div class="skill-group">
+                                <h4>Concepts</h4>
+                                <div class="skill-tags">
+                                    <span>Subnetting</span><span>Network ID</span><span>Routing</span><span>Network Security</span>
+                                </div>
+                            </div>
+                            <div class="skill-group">
+                                <h4>Tools & Training</h4>
+                                <ul class="skill-list">
+                                    <li><i class="fas fa-angle-right"></i> Cisco Packet Tracer</li>
+                                    <li><i class="fas fa-angle-right"></i> 45 Days Networking & Cybersecurity Training</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="skill-category fade-in-up hacker-panel" style="transition-delay: 0.2s;">
+                            <div class="skill-header">
+                                <i class="fas fa-cloud"></i>
+                                <h3>Cloud & DevOps</h3>
+                            </div>
+                            <div class="skill-group">
+                                <h4>Technologies</h4>
+                                <div class="skill-tags">
+                                    <span>AWS</span><span>DevOps Basics</span><span>Python</span>
+                                </div>
+                            </div>
+                            <div class="skill-group">
+                                <h4>Currently Learning</h4>
+                                <div class="skill-tags learning">
+                                    <span>Terraform</span><span>Kubernetes</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section id="experience" class="section exp-section">
+                <div class="section-container">
+                    <h2 class="section-title">Active Processes (Experience)</h2>
+                    <div class="timeline">
+                        <div class="timeline-item fade-in-up hacker-panel">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3>Cybersecurity Intern</h3>
+                                <h4>Coder Roots</h4>
+                                <p class="timeline-date">Current Status</p>
+                                <p>Gaining hands-on experience in ethical hacking, vulnerability assessment, and utilizing various security tools.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="section projects-section">
+                <div class="section-container">
+                    <h2 class="section-title">Exploits & Tools (Projects)</h2>
+                    <div class="projects-grid">
+                        <div class="project-card fade-in-up hacker-panel">
+                            <div class="project-icon"><i class="fas fa-mobile-alt"></i></div>
+                            <h3>ANTAAF</h3>
+                            <p>Android Network Traffic and Active Firewall.</p>
+                        </div>
+                        <div class="project-card fade-in-up hacker-panel">
+                            <div class="project-icon"><i class="fas fa-spider"></i></div>
+                            <h3>PhishAI</h3>
+                            <p>Fake Link Detector & Open Ports Finder.</p>
+                        </div>
+                        <div class="project-card fade-in-up hacker-panel">
+                            <div class="project-icon"><i class="fas fa-hands-helping"></i></div>
+                            <h3>Annseva</h3>
+                            <p>Web platform aimed at food distribution.</p>
+                        </div>
+                        <div class="project-card fade-in-up hacker-panel">
+                            <div class="project-icon"><i class="fas fa-shield-virus"></i></div>
+                            <h3>Web Firewall</h3>
+                            <p>Website Protection from Attacks.</p>
+                        </div>
+                        <div class="project-card fade-in-up hacker-panel">
+                            <div class="project-icon"><i class="fas fa-eye"></i></div>
+                            <h3>Vigilance AI</h3>
+                            <p>AI-driven surveillance and monitoring project.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Achievements & Education -->
+            <section id="achievements" class="section achievements-section">
+                <div class="section-container">
+                    <h2 class="section-title">Execution Logs (Achievements)</h2>
+                    
+                    <div class="stats-container">
+                        <div class="stat-box fade-in-up hacker-panel">
+                            <i class="fas fa-code"></i>
+                            <h3 class="counter" data-target="20">0</h3>
+                            <p>Hackathons Evaluated</p>
+                        </div>
+                        <div class="stat-box fade-in-up hacker-panel" style="transition-delay: 0.1s;">
+                            <i class="fas fa-certificate"></i>
+                            <h3 class="counter" data-target="30">0</h3>
+                            <p>Credentials Acquired</p>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center; margin-bottom: 40px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                        <a href="hackathons.html" class="btn primary-btn"><i class="fas fa-code"></i> View Hackathon Logs (Events)</a>
+                        <a href="certificates.html" class="btn primary-btn"><i class="fas fa-certificate"></i> View Credential Archive (Certificates)</a>
+                        <a href="nse_certificates.html" class="btn primary-btn"><i class="fas fa-shield-alt"></i> View NSE Certificates (Fortinet)</a>
+                    </div>
+
+                    <h3 class="subsection-title fade-in-up">Education Data</h3>
+                    <div class="timeline-item fade-in-up hacker-panel" style="margin-top: 20px;">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>B.Tech CSE</h3>
+                            <h4>Sant Baba Bhag Singh University, Jalandhar</h4>
+                            <p class="timeline-date">Final Year User Status</p>
+                            <p>Undergraduate level computer science engineering focus.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="section contact-section">
+                <div class="section-container">
+                    <h2 class="section-title">Establish Secure Connection</h2>
+                    <div class="contact-content fade-in-up hacker-panel">
+                        <div class="contact-info">
+                            <h3>Root Node</h3>
+                            <p><i class="fas fa-phone-alt"></i> 9805747828</p>
+                            <p><i class="fas fa-envelope"></i> isahilbhatiaa@gmail.com</p>
+                            <p><i class="fas fa-envelope"></i> sahilbhatia250905@gmail.com</p>
+                            
+                            <div class="social-links">
+                                <a href="https://github.com/sahilbhatiaa" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                                <a href="https://www.linkedin.com/in/sahilbhatiaa" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <form class="contact-form">
+                            <div class="form-group">
+                                <input type="text" id="name" placeholder="Target Alias (Name)" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" placeholder="Return Address (Email)" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message" rows="5" placeholder="Encrypt your payload here..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn primary-btn"><i class="fas fa-terminal"></i> Execute Request</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Sahil Bhatia. Transmission Encrypted.</p>
+        </footer>
+    </div> <!-- End Portfolio Overlay -->
+
+    <script src="script.js"></script>
+</body>
+</html>
